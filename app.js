@@ -987,11 +987,19 @@ function loopArray(){
         const val = quizData[ind];
         console.log(ind, val);
         
-        document.getElementById("output").innerHTML += val.country + ' ' + val.city +  '<br />';
+        document.getElementById("output").innerHTML += val.country + ' ' + val.city +  '<br />'; 
        
+                   
+        q = `The capital city of ${val.country} ?`
+        var answer = val.city
+        document.getElementById('question' + [i]).textContent = q
+        console.log(quizData[i].country + val.city + ind)     
     }
 
+
 }
+
+
 loopArray();
 /*
 document.getElementById("app").innerHTML = `

@@ -1,18 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="style.css">
+
+
     <title>Quiz Capital Game</title>
 </head>
+
 <body>
-    <div class="gameArea"></div>
+    <div class="col-xs-12">
+        <div class="header">
+            <h1>World Capital Cities</h1>
+            <p>Put your knowledge to test</p>
+
+
+        </div>
+    </div>
+    <form>
+        <div class="form-group">
+            <p id="question0"></p>
+            <input id="answer0" class="form-control" type="text" name="">
+        </div> <!-- form-group -1- -->
+        <div class="form-group">
+            <p id="question1"></p>
+            <input id="answer1" class="form-control" type="text" name="">
+        </div> <!-- form-group -2- -->
+        <div class="form-group">
+            <p id="question2"></p>
+            <input id="answer2" class="form-control" type="text" name="">
+        </div> <!-- form-group -3- -->
+        <div class="form-group">
+            <p id="question3"></p>
+            <input id="answer3" class="form-control" type="text" name="">
+        </div> <!-- form-group -4- -->
+        <div class="form-group">
+            <p id="question4"></p>
+            <input id="answer4" class="form-control" type="text" name="">
+        </div> <!-- form-group -5- -->
+        <div class="form-group">
+            <p id="question5"></p>
+            <input id="answer5" class="form-control" type="text" name="">
+        </div> <!-- form-group -6- -->
+        <div class="form-group">
+            <p id="question6"></p>
+            <input id="answer6" class="form-control" type="text" name="">
+        </div> <!-- form-group -7- -->
+        <div class="form-group">
+            <p id="question7"></p>
+            <input id="answer7" class="form-control" type="text" name="">
+        </div>
+        <div class="form-group">
+            <p id="question8"></p>
+            <input id="answer8" class="form-control" type="text" name="">
+        </div>
+        <div class="form-group">
+            <p id="question9"></p>
+            <input id="answer9" class="form-control" type="text" name="">
+        </div>
+
+        <button type="button" onclick="calculateAnswer()" class="btn  btn-lg">SUBMIT</button>
+    </form>
+    </div>
+
+    <div class="col-xs-3"></div>
+
     <div id="output"></div>
-    <div id="app"></div>
-    <h1 class="app-title"></h1>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+
     <script src="app.js"></script>
-    
+
 </body>
+
 </html>
