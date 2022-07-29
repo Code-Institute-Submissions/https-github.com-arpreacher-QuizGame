@@ -981,18 +981,22 @@ const quizData = [
     quizData.push(ran(0,1000));
 }*/
 
-for(let i=0;i<10;i++){
-    const ind = Math.floor(Math.random() * quizData.length);
-    const val = quizData[ind];
-    console.log(ind, val);
-}
+function loopArray(){
+    for(let i=0;i<10;i++){
+        const ind = Math.floor(Math.random() * quizData.length);
+        const val = quizData[ind];
+        console.log(ind, val);
+        
+        document.getElementById("output").innerHTML += val.country + ' ' + val.city +  '<br />';
+       
+    }
 
-/*function ran(min, max) {
-    let res = Math.floor(Math.random() *(max-min+1)) + min
-    return res;
 }
-
-var obj = quizData[Math.floor(Math.random() * 100)];
-document.getElementById(obj);
-console.log(obj.country, obj.city);*/
-  
+loopArray();
+/*
+document.getElementById("app").innerHTML = `
+<h1 class="app-title">Country Capital(${quizData.length} results)</h1>
+${quizData.map(function(city){
+    return city.city
+}).join('')}
+`*/
