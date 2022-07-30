@@ -1,70 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Roboto:wght@300&display=swap');
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: lightgreen;
-}
-.header {
-	text-align: center;
-	color: rgb(184, 99, 30);
-	margin-top: 30px;
-	margin-bottom: 50px;
-}
-
-.header h1 {
-	font-family: 'Nunito Sans', sans-serif, cursive;
-	letter-spacing: 5px;
-}
-.header p {
-	font-family: 'Nunito Sans', sans-serif, cursive;
-	font-size: 1em;
-    letter-spacing: 4px;
-    
-}
 
 form {
 	padding: 20px;
     background-color: rgba(4, 1, 1, 0.19);
     border-radius: 40px;
 }
+
+.header {
+	text-align: center;
+	color: maroon;
+}
 .form-group {
 
 }
+
 .form-group p {
-	color: #A1351E;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 1em;
 }
-
-form .btn {
-	color: white;
-	background-color: #49A11E;
-    border-color: #ffffff;
+.form-group input {
+	
 }
-form .btn:hover {
-	color: white;
-	background-color: #A1351E;
-	border-color: #ffffff;
-}
-form .btn:focus {
-	color: white;
-	background-color: #A1351E;
-	border: 2px solid #ffffff;
-}
-.correct {
-	color: white;
-	background-color: green;
-	padding: 5px;
-
-}
-.incorrect {
-	color: white;
-	background-color: red;
-	padding: 5px;
-
-}
-.empty {
-	color: white;
-	background-color: gray;
-	padding: 5px;
-
-}
-
