@@ -1,24 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Roboto:wght@300&display=swap');
 
 
-form {
+.quiz{
 	padding: 20px;
     background-color: rgba(4, 1, 1, 0.19);
     border-radius: 40px;
+	font-family: 'Nunito', sans-serif;
 }
 
-.header {
-	text-align: center;
-	color: maroon;
-}
-.form-group {
-
-}
-
-.form-group p {
-	font-family: 'Nunito Sans', sans-serif;
-	font-size: 1em;
-}
-.form-group input {
-	
+ul {
+    display: flex; 
+    flex-direction: column;
 }

@@ -1,135 +1,144 @@
 const quizData = [
 
     {
-
-        "country": "Ireland",
-        "city": "Dublin"
+        capitalCities: "What is the captial of Ireland?",
+        choices: ['Dublin',
+            'Warsaw',
+            'London'],
+        answer: 0
     },
 
     {
-        "country": "Australia",
-        "city": "Canberra"
-
+        capitalCities: "What is the captial of India?",
+        choices: ['Madrid',
+            'Berlin',
+            'Delhi'],
+        answer: 2
     },
 
     {
-        "country": "Botswana",
-        "city": "Gaborone"
+        capitalCities: "What is the captial of Poland?",
+        choices: ['Zagreb',
+            'Warsaw',
+            'Canberra'],
+        answer: 1
     },
-           
+
     {
-        "country": "Cayman Islands",
-        "city": "George Town"
+        capitalCities: "What is the captial of Australia?",
+        choices: ['Canberra',
+            'Vienna',
+            'Buenos Aires'],
+        answer: 0
     },
+
     {
-        "country": "Central African Republic",
-        "city": "Bangui"
+        capitalCities: "What is the captial of Germany?",
+        choices: ['Canberra',
+            'Berlin',
+            'San Jose'],
+        answer: 1
     },
-    
+
     {
-        "country": "Zimbabwe",
-        "city": "Harare"
+        capitalCities: "What is the captial of Ethiopia?",
+        choices: ['Bamako',
+            'Monrovia',
+            'Addis Ababa'],
+        answer: 2
     }
 
-]
-/*for(let i=0; i<100; i++) {
-    
-    quizData.push(ran(0,1000));
-}*/
 
-console.log(quizData.length);
-
-function loopArray() {
-    for (let i = 0; i < 10; i++) {
-        const ind = Math.floor(Math.random() * quizData.length);
-        const val = quizData[ind];
-        console.log(ind, val);
-
-        document.getElementById("output").innerHTML += val.country + ' ' + val.city + '<br />';
-        /*document.getElementById("city").innerHTML += '<br />' + val.city + '<br />'; */
+];
 
 
-        q = `The capital city of ${val.country} ?`
-        
-        /*var answer = val.city */
-        /*document.getElementById('question' + [i]).textContent = q */
-        
-          
-            
-        
-        /*console.log(quizData[i].country + val.city + ind)     */
-    }
- 
-}
 
+function main() {
+    const quizValue = document.getElementById('quiz')
+    let nStr = '';
 
-function getCity(){
-    for (let i = 0; i < 5; i++) {
-        const ind = Math.floor(Math.random() * quizData.length);
-        const val = quizData[ind];
-        console.log(ind, val);
-  
-        document.getElementById("city").innerHTML += val.city + '<br />';
-}
-}
+    quizData.forEach(function (quiz, qIndex) {
 
+        let correctAns = '';
 
-function init() {
-    const quizEl = document.getElementById('quiz')
+        const choiceOrd = arbRange(quiz.choices.length);
 
-    let quizStr = ''
-
-    for (let i = 0; i < 6; i++) {
-        const ind = Math.floor(Math.random() * quizData.length);
-        const val = quizData[ind];
-        let answerStr = ''
-        console.log(ind);
-        
-        /*console.log(`The capital city of ${val.country}`);*/
-
-        quizData.forEach(function(answer, aIndex) {
-            console.log(answer.city);
-            answerStr += ` 
-                <li>
+        quiz.choices.forEach(function (ans, aIndex) {
+            correctAns += `
+                <li style="order: ${choiceOrd[aIndex]}">
                     <label>
-                    <input type="radio" name="questions-${ind}">
-                        ${answer.city}
-                    </label>
-                </li>
-            
-            `               
+                    <input type="radio" name="choices:${qIndex}" isAns="${quiz.answer === aIndex}" >
+                    ${ans}
+                        </label>
+                    </li>
+            `;
+
         })
 
+        /*console.log(quiz.capitalCities);
+        console.log(quiz.answer);*/
+        nStr += `
 
-        quizStr += `
-        <form>
-            <h1>The capital city of ${val.country} ?</h1>
+            <form>
+            <h2>${quiz.capitalCities}</h2>
+            <div class="notify"></div>
             <ul>
-                ${answerStr}
-
+                ${correctAns}
             </ul>
-        </form>
+            <button type="submit">Submit</button>
+            </form>
+
+
         `
+    })
+
+    // Add to the DOM
+    quizValue.innerHTML = nStr;
+    quizValue.addEventListener('submit', function(event) {
+        event.preventDefault() //page won't refresh on submit
+        //console.log(event);
+        const alert = event.target.querySelector('div.notify')
+        const inputs = event.target.querySelector("input[type=radio]:checked")
+        if (inputs === null) {
+            alert.innerHTML = 'Please choose an answer'
+            } else if (event.target.querySelector("input[type=radio]:checked").answer != "true") {
+                alert.innerHTML = 'Correct answer'
+            }
+                            
+            
+       //console.log(document.getElementById('quiz'))
        
-    }
+       console.log(inputs)
+      
+    })
 
-
-
-
-    quizEl.innerHTML = quizStr
+    
 }
 
+main();
 
+function arb(x) {
 
+ const n = Math.random() * x
+ return Math.floor(n)
 
-/*loopArray();
-getCity();*/
+}
 
-init();
+function arbRange(n) {
+    const arr = []
+    for (let i=0; i<n;i++) {
+        arr.push(i)
+    }
+    const newArr = []
+    while(arr.length > 0) {
+        const rIndex = arb(arr.length)
+        const rNumber = arr[rIndex]
+        newArr.push(rNumber)
+        arr.splice(rIndex, 1)
+    }
+    //console.log(arr)
+    return newArr
 
-/*document.getElementById("app").innerHTML = `
-<h1 class="app-title">Country Capital(${quizData.length} results)</h1>
-${quizData.map(function(city){
-    return city.city
-}).join('')}
-`*/
+}
+
+//console.log(arbRange(5));
