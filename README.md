@@ -52,7 +52,6 @@ This section should describe the process you went through to deploy the project 
 The live link can be found here - https://arpreacher.github.io/QuizGame/
 
 ## Credits 
-- The correct/incorrect answer code were taken from the Love Maths project
 - Instructions on how to use arrays from [Specific YouTube Tutorial](https://www.youtube.com/watch?v=ec8vSKJuZTk)
 (https://www.youtube.com/watch?v=riDzcEQbX6k) (https://www.youtube.com/watch?v=tVq4L8tnWuA)
 - The fonts were taken from [Google Fonts]( https://fonts.google.com/)
